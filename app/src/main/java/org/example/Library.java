@@ -22,11 +22,11 @@ public class Library {
     }
 
     //Method to remove a book object
-    public void removeBook(String title) {
+    public void removeBook(Book book) {
         boolean found = false;
 
         for (int i = 0; i < booksInStore.size(); i++) {
-            if (booksInStore.get(i).getTitle().equals(title)) {
+            if (booksInStore.get(i).getTitle().equals(book.getTitle())) {
                 booksInStore.remove(i);
                 System.out.println("This book has been removed from the library");
                 found = true;
@@ -38,15 +38,15 @@ public class Library {
     }
 
     //Method to search for a book
-    public void searchBook(String title) {
+    public void searchBook(Book book) {
         boolean found = false;
 
-        for (Book book : booksInStore) {
-            if (book.getTitle().equals(title)) {
+        for (int i = 0; i < booksInStore.size(); i++) {
+            if (booksInStore.get(i).getTitle().equals(book.getTitle())) {
                 // print out the details of the found book
-                System.out.println("Title:" + book.getTitle());
-                System.out.println("Author:" + book.getAuthor());
-                System.out.println("Year Published:" + book.getYearPublished());
+                System.out.println("Title: " + booksInStore.get(i).getTitle());
+                System.out.println("Author: " + booksInStore.get(i).getAuthor());
+                System.out.println("Year Published: " + booksInStore.get(i).getYearPublished());
 
                 found = true;
                 return;

@@ -1,5 +1,5 @@
 public class Book {
-//Initializing Variables
+    //Initializing Variables
     private String title;
     private String author;
     private int yearPublished;
@@ -22,7 +22,7 @@ public class Book {
     }
 
     //Author Getter and Setter
-    public String Author() {
+    public String getAuthor() {
         return author;
     }
 
@@ -39,23 +39,25 @@ public class Book {
         this.yearPublished = yearPublished;
     }
 
-    //Method to borrow a book
-    public String borrowBook() {
-        if (isBorrowed) {
-            return("This book is already borrowed");
-        } else {
-            isBorrowed = true;
-            return("You have successfully borrowed the book");
-        }
+    //isBorrowed getter and setter
+    public boolean getIsBorrowed() {
+        return isBorrowed;
     }
 
+    public void setIsBorrowed() {
+        isBorrowed = !isBorrowed;
+    }
+
+
     //Method to return a book
-    public String returnBook() {
+    public boolean returnBook() {
         if (!isBorrowed) {
-            return("You did not borrow this book.");
+            System.out.println("This book is not borrowed");
+            return false;
         } else {
+            System.out.println("This book has been returned");
             isBorrowed = false;
-            return("You have successfully returned the book");
+            return true;
         }
     }
 }

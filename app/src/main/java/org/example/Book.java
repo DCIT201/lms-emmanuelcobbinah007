@@ -1,6 +1,5 @@
 public class Book {
-    
-    //Initializing Variables
+//Initializing Variables
     private String title;
     private String author;
     private int yearPublished;
@@ -40,4 +39,23 @@ public class Book {
         this.yearPublished = yearPublished;
     }
 
+    //Method to borrow a book
+    public String borrowBook() {
+        if (isBorrowed) {
+            return("This book is already borrowed");
+        } else {
+            isBorrowed = true;
+            return("You have successfully borrowed the book");
+        }
+    }
+
+    //Method to return a book
+    public String returnBook() {
+        if (!isBorrowed) {
+            return("You did not borrow this book.");
+        } else {
+            isBorrowed = false;
+            return("You have successfully returned the book");
+        }
+    }
 }

@@ -12,7 +12,7 @@ public class Library {
 
         //Checking for no duplicates
         for (int i = 0; i < booksInStore.size(); i++) {
-            if (booksInStore.get(i).getTitle().equals(book.getTitle())) {
+            if (booksInStore.get(i).getTitle().equals(book.getTitle()) && booksInStore.get(i).getAuthor().equals(book.getAuthor()) && booksInStore.get(i).getYearPublished() == book.getYearPublished()) {
                 booksInStore.remove(i);
                 booksInStore.add(book);
                 System.out.println("This book has been added to the library");
@@ -28,7 +28,7 @@ public class Library {
         boolean found = false;
 
         for (int i = 0; i < booksInStore.size(); i++) {
-            if (booksInStore.get(i).getTitle().equals(book.getTitle())) {
+            if (booksInStore.get(i).getTitle().equals(book.getTitle()) && booksInStore.get(i).getAuthor().equals(book.getAuthor()) && booksInStore.get(i).getYearPublished() == book.getYearPublished()) {
                 booksInStore.remove(i);
                 System.out.println("This book has been removed from the library");
                 found = true;
@@ -44,7 +44,7 @@ public class Library {
         boolean found = false;
 
         for (int i = 0; i < booksInStore.size(); i++) {
-            if (booksInStore.get(i).getTitle().equals(book.getTitle())) {
+            if (booksInStore.get(i).getTitle().equals(book.getTitle()) && booksInStore.get(i).getAuthor().equals(book.getAuthor()) && booksInStore.get(i).getYearPublished() == book.getYearPublished()) {
                 // print out the details of the found book
                 System.out.println("Title: " + booksInStore.get(i).getTitle());
                 System.out.println("Author: " + booksInStore.get(i).getAuthor());
@@ -60,7 +60,9 @@ public class Library {
 
     //Method to list all books
     public void listAllBooks() {
-        for (Book book : booksInStore) System.out.println(book);
+        for (Book book : booksInStore) {
+        System.out.println(book); 
+    }
     }
 
 }

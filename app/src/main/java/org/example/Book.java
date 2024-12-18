@@ -42,12 +42,12 @@ public class Book {
     }
 
     //isBorrowed getter and setter
-    public boolean isBorrowed() {
-        return isBorrowed;
-    }
+    public boolean getIsBorrowed() {
+    return isBorrowed;
+}
 
-    public void setIsBorrowed(boolean isBorrowed) {
-    this.isBorrowed = isBorrowed;
+    public void setIsBorrowed() {
+    isBorrowed = !isBorrowed;
 }
 
 

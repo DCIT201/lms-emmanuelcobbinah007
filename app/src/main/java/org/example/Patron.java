@@ -30,15 +30,18 @@ public class Patron {
         return id;
     }
 
-    public void borrowBook(Book book) {
+    public boolean borrowBook(Book book) {
         if (borrowedBooks.size() >= maxBooksAllowed) {
-            System.out.println("You can't borrow more than" + maxBooksAllowed + "books");
+            System.out.println("You can't borrow more than " + maxBooksAllowed + "books");
+            return false;
         } else if (book.getIsBorrowed()) {
             System.out.println("Sorry, this book is already borrwed.");
+            return false;
         } else {
             borrowedBooks.add(book);
             System.out.println("You have successfully borrowed the book: " + book.getTitle());
             book.setIsBorrowed();
+            return true;
         }
     }
 
